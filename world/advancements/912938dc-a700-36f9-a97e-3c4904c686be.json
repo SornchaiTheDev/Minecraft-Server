@@ -1,0 +1,27 @@
+{
+  "vanillatweaks:root": {
+    "criteria": {
+      "tick": "2022-04-24 13:58:50 +0000"
+    },
+    "done": true
+  },
+  "vanillatweaks:timber": {
+    "criteria": {
+      "tick": "2022-04-24 13:58:50 +0000"
+    },
+    "done": true
+  },
+  "vanillatweaks:coordinates_hud": {
+    "criteria": {
+      "tick": "2022-04-24 13:58:50 +0000"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:savanna": "2022-04-24 13:58:50 +0000"
+    },
+    "done": false
+  },
+  "DataVersion": 2975
+}

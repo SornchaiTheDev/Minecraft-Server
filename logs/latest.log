@@ -1,0 +1,19 @@
+[10:56:59] [Server thread/INFO]: Stopping the server
+[10:56:59] [Server thread/INFO]: Stopping server
+[10:56:59] [Server thread/INFO]: [UltimateStacker] Disabling UltimateStacker v2.2.1
+[10:56:59] [Server thread/INFO]:  [m
+[10:56:59] [Server thread/INFO]: [0;32;1m=============================[m
+[10:56:59] [Server thread/INFO]: [0;37;22mUltimateStacker 2.2.1 by [0;35;22mSongoda <3![m
+[10:56:59] [Server thread/INFO]: [0;37;22mAction: [0;31;1mDisabling[0;37;22m...[m
+[10:56:59] [Server thread/INFO]: [0;32;1m=============================[m
+[10:56:59] [Server thread/INFO]:  [m
+[10:56:59] [Server thread/INFO]: [SkinsRestorer] Disabling SkinsRestorer v14.1.15
+[10:56:59] [Server thread/INFO]: Saving players
+[10:56:59] [Server thread/INFO]: Saving worlds
+[10:57:02] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[10:57:05] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[10:57:05] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[10:57:05] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[10:57:05] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[10:57:05] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[10:57:05] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved

@@ -1,0 +1,163 @@
+---- Minecraft Crash Report ----
+// Why is it breaking :(
+
+Time: 4/22/22, 10:57 PM
+Description: Exception ticking world
+
+java.lang.ArrayIndexOutOfBoundsException: Index 269 out of bounds for length 33
+	at it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap.fixPointers(Int2ObjectLinkedOpenHashMap.java:1067)
+	at it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap.shiftKeys(Int2ObjectLinkedOpenHashMap.java:386)
+	at it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap.removeEntry(Int2ObjectLinkedOpenHashMap.java:285)
+	at it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap.remove(Int2ObjectLinkedOpenHashMap.java:404)
+	at net.minecraft.world.level.entity.EntityLookup.b(SourceFile:46)
+	at net.minecraft.world.level.entity.PersistentEntitySectionManager.f(PersistentEntitySectionManager.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at net.minecraft.world.level.entity.PersistentEntitySectionManager.lambda$4(PersistentEntitySectionManager.java:188)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.LongPipeline$1$1.accept(LongPipeline.java:177)
+	at java.base/java.util.PrimitiveIterator$OfLong.forEachRemaining(PrimitiveIterator.java:183)
+	at java.base/java.util.Spliterators$LongIteratorSpliterator.forEachRemaining(Spliterators.java:2046)
+	at java.base/java.util.Spliterator$OfLong.forEachRemaining(Spliterator.java:775)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at net.minecraft.world.level.entity.PersistentEntitySectionManager.a(PersistentEntitySectionManager.java:172)
+	at net.minecraft.world.level.entity.PersistentEntitySectionManager.a(PersistentEntitySectionManager.java:157)
+	at net.minecraft.server.level.PlayerChunkMap.a(PlayerChunkMap.java:1421)
+	at net.minecraft.server.level.PlayerChunk.a(PlayerChunk.java:397)
+	at net.minecraft.server.level.PlayerChunk.a(PlayerChunk.java:496)
+	at net.minecraft.server.level.ChunkMapDistance.a(ChunkMapDistance.java:138)
+	at net.minecraft.server.level.ChunkProviderServer.q(ChunkProviderServer.java:318)
+	at net.minecraft.server.level.ChunkProviderServer.a(ChunkProviderServer.java:380)
+	at net.minecraft.server.level.WorldServer.a(WorldServer.java:357)
+	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1330)
+	at net.minecraft.server.dedicated.DedicatedServer.b(DedicatedServer.java:429)
+	at net.minecraft.server.MinecraftServer.a(MinecraftServer.java:1237)
+	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1047)
+	at net.minecraft.server.MinecraftServer.lambda$0(MinecraftServer.java:304)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap.fixPointers(Int2ObjectLinkedOpenHashMap.java:1067)
+	at it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap.shiftKeys(Int2ObjectLinkedOpenHashMap.java:386)
+	at it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap.removeEntry(Int2ObjectLinkedOpenHashMap.java:285)
+	at it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap.remove(Int2ObjectLinkedOpenHashMap.java:404)
+	at net.minecraft.world.level.entity.EntityLookup.b(SourceFile:46)
+	at net.minecraft.world.level.entity.PersistentEntitySectionManager.f(PersistentEntitySectionManager.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at net.minecraft.world.level.entity.PersistentEntitySectionManager.lambda$4(PersistentEntitySectionManager.java:188)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.LongPipeline$1$1.accept(LongPipeline.java:177)
+	at java.base/java.util.PrimitiveIterator$OfLong.forEachRemaining(PrimitiveIterator.java:183)
+	at java.base/java.util.Spliterators$LongIteratorSpliterator.forEachRemaining(Spliterators.java:2046)
+	at java.base/java.util.Spliterator$OfLong.forEachRemaining(Spliterator.java:775)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at net.minecraft.world.level.entity.PersistentEntitySectionManager.a(PersistentEntitySectionManager.java:172)
+	at net.minecraft.world.level.entity.PersistentEntitySectionManager.a(PersistentEntitySectionManager.java:157)
+	at net.minecraft.server.level.PlayerChunkMap.a(PlayerChunkMap.java:1421)
+	at net.minecraft.server.level.PlayerChunk.a(PlayerChunk.java:397)
+	at net.minecraft.server.level.PlayerChunk.a(PlayerChunk.java:496)
+	at net.minecraft.server.level.ChunkMapDistance.a(ChunkMapDistance.java:138)
+	at net.minecraft.server.level.ChunkProviderServer.q(ChunkProviderServer.java:318)
+	at net.minecraft.server.level.ChunkProviderServer.a(ChunkProviderServer.java:380)
+	at net.minecraft.server.level.WorldServer.a(WorldServer.java:357)
+
+-- Affected level --
+Details:
+	All players: 0 total; []
+	Chunk stats: 2209
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (16,63,-16), Section: (at 0,15,0 in 1,3,-1; chunk contains blocks 16,-64,-16 to 31,319,-1), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,-64,-512 to 511,319,-1)
+	Level time: 94425 game time, 94425 day time
+	Level name: world
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Level weather: Rain time: 21532 (now: false), thunder time: 29152 (now: false)
+	Known server brands: vanilla, Spigot
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1330)
+	at net.minecraft.server.dedicated.DedicatedServer.b(DedicatedServer.java:429)
+	at net.minecraft.server.MinecraftServer.a(MinecraftServer.java:1237)
+	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1047)
+	at net.minecraft.server.MinecraftServer.lambda$0(MinecraftServer.java:304)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.18.2
+	Minecraft Version ID: 1.18.2
+	Operating System: Linux (amd64) version 5.4.0-1018-aws
+	Java Version: 17.0.2, Private Build
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Private Build
+	Memory: 1655871024 bytes (1579 MiB) / 4294967296 bytes (4096 MiB) up to 4294967296 bytes (4096 MiB)
+	CPUs: 2
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+	Identifier: Intel64 Family 6 Model 79 Stepping 1
+	Microarchitecture: Broadwell (Server)
+	Frequency (GHz): 2.30
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 2
+	Graphics card #0 name: GD 5446
+	Graphics card #0 vendor: Cirrus Logic (0x1013)
+	Graphics card #0 VRAM (MB): 32.00
+	Graphics card #0 deviceId: 0x00b8
+	Graphics card #0 versionInfo: unknown
+	Memory slot #0 capacity (MB): 8192.00
+	Memory slot #0 clockSpeed (GHz): -0.00
+	Memory slot #0 type: RAM
+	Virtual memory max (MB): 3979.88
+	Virtual memory used (MB): 4903.97
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 3 total; -Xms4G -Xmx4G -XX:+UseG1GC
+	CraftBukkit Information: 
+   Running: CraftBukkit version 3482-Spigot-42b6152-e87f2e3 (MC: 1.18.2) (Implementing API version 1.18.2-R0.1-SNAPSHOT) false
+   Plugins: { SkinsRestorer v14.1.15 net.skinsrestorer.bukkit.SkinsRestorer [Th3Tr0LLeR, McLive, DoNotSpamPls, knat, AlexProgrammerDE],}
+   Warnings: DEFAULT
+   Reload Count: 0
+   Threads: { TIMED_WAITING bStats-Metrics: [java.base@17.0.2/jdk.internal.misc.Unsafe.park(Native Method), java.base@17.0.2/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252), java.base@17.0.2/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672), java.base@17.0.2/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182), java.base@17.0.2/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], RUNNABLE Signal Dispatcher: [], TIMED_WAITING ExpiringMap-Expirer: [java.base@17.0.2/jdk.internal.misc.Unsafe.park(Native Method), java.base@17.0.2/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252), java.base@17.0.2/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672), java.base@17.0.2/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182), java.base@17.0.2/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], WAITING Finalizer: [java.base@17.0.2/java.lang.Object.wait(Native Method), java.base@17.0.2/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155), java.base@17.0.2/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:176), java.base@17.0.2/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:172)], BLOCKED SIGHUP handler: [java.base@17.0.2/java.lang.Shutdown.exit(Shutdown.java:172), java.base@17.0.2/java.lang.Terminator$1.handle(Terminator.java:51), java.base@17.0.2/jdk.internal.misc.Signal$1.run(Signal.java:219), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], RUNNABLE Notification Thread: [], WAITING TerminalConsoleWriter: [java.base@17.0.2/jdk.internal.misc.Unsafe.park(Native Method), java.base@17.0.2/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341), java.base@17.0.2/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506), java.base@17.0.2/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3463), java.base@17.0.2/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3434), java.base@17.0.2/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1623), java.base@17.0.2/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435), com.mojang.logging.LogQueues.getNextLogEvent(LogQueues.java:41), org.bukkit.craftbukkit.v1_18_R2.util.TerminalConsoleWriterThread.run(TerminalConsoleWriterThread.java:31)], RUNNABLE Worker-Main-32: [net.minecraft.world.level.lighting.LightEngineGraph.b(SourceFile:183), net.minecraft.server.level.LightEngineGraphSection.a(SourceFile:26), net.minecraft.world.level.lighting.LightEngineGraph.b(SourceFile:221), net.minecraft.world.level.lighting.LightEngineLayer.a(SourceFile:178), net.minecraft.world.level.lighting.LightEngine.a(SourceFile:63), net.minecraft.server.level.LightEngineThreaded.e(SourceFile:177), net.minecraft.server.level.LightEngineThreaded.a(SourceFile:107), net.minecraft.server.level.LightEngineThreaded$$Lambda$4429/0x000000080160dca8.run(Unknown Source), net.minecraft.server.level.ChunkTaskQueueSorter.b(SourceFile:62), net.minecraft.server.level.ChunkTaskQueueSorter$$Lambda$4441/0x0000000801611b08.run(Unknown Source), net.minecraft.util.thread.ThreadedMailbox.h(SourceFile:91), net.minecraft.util.thread.ThreadedMailbox.a(SourceFile:146), net.minecraft.util.thread.ThreadedMailbox.run(SourceFile:102), java.base@17.0.2/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395), java.base@17.0.2/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373), java.base@17.0.2/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182), java.base@17.0.2/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655), java.base@17.0.2/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622), java.base@17.0.2/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)], RUNNABLE IO-Worker-36: [java.base@17.0.2/jdk.internal.misc.Unsafe.park(Native Method), java.base@17.0.2/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252), java.base@17.0.2/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401), java.base@17.0.2/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], TIMED_WAITING process reaper: [java.base@17.0.2/jdk.internal.misc.Unsafe.park(Native Method), java.base@17.0.2/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252), java.base@17.0.2/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401), java.base@17.0.2/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], TIMED_WAITING Timer hack thread: [java.base@17.0.2/java.lang.Thread.sleep(Native Method), net.minecraft.SystemUtils$8.run(SourceFile:784)], RUNNABLE Server thread: [java.base@17.0.2/java.lang.Thread.dumpThreads(Native Method), java.base@17.0.2/java.lang.Thread.getAllStackTraces(Thread.java:1662), org.bukkit.craftbukkit.v1_18_R2.CraftCrashReport.get(CraftCrashReport.java:33), org.bukkit.craftbukkit.v1_18_R2.CraftCrashReport.get(CraftCrashReport.java:1), net.minecraft.SystemReport.a(SourceFile:65), net.minecraft.CrashReport.<init>(CrashReport.java:35), net.minecraft.CrashReport.a(CrashReport.java:240), net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1336), net.minecraft.server.dedicated.DedicatedServer.b(DedicatedServer.java:429), net.minecraft.server.MinecraftServer.a(MinecraftServer.java:1237), net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1047), net.minecraft.server.MinecraftServer.lambda$0(MinecraftServer.java:304), net.minecraft.server.MinecraftServer$$Lambda$4182/0x0000000801404a68.run(Unknown Source), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], TIMED_WAITING IO-Worker-33: [java.base@17.0.2/sun.nio.fs.UnixPath.resolve(UnixPath.java:382), java.base@17.0.2/sun.nio.fs.UnixPath.resolve(UnixPath.java:43), java.base@17.0.2/java.nio.file.Path.resolve(Path.java:515), net.minecraft.world.level.chunk.storage.RegionFile.f(RegionFile.java:118), net.minecraft.world.level.chunk.storage.RegionFile.lambda$0(RegionFile.java:326), net.minecraft.world.level.chunk.storage.RegionFile$$Lambda$4940/0x0000000801896b70.run(Unknown Source), net.minecraft.world.level.chunk.storage.RegionFile.a(RegionFile.java:334), net.minecraft.world.level.chunk.storage.RegionFile$ChunkBuffer.close(RegionFile.java:439), java.base@17.0.2/java.util.zip.DeflaterOutputStream.close(DeflaterOutputStream.java:240), java.base@17.0.2/java.io.FilterOutputStream.close(FilterOutputStream.java:188), java.base@17.0.2/java.io.FilterOutputStream.close(FilterOutputStream.java:188), net.minecraft.world.level.chunk.storage.RegionFileCache.a(RegionFileCache.java:155), net.minecraft.world.level.chunk.storage.IOWorker.a(SourceFile:174), net.minecraft.world.level.chunk.storage.IOWorker.a(SourceFile:164), net.minecraft.world.level.chunk.storage.IOWorker$$Lambda$4414/0x00000008016088c0.run(Unknown Source), net.minecraft.util.thread.PairedQueue$b.run(SourceFile:59), net.minecraft.util.thread.ThreadedMailbox.h(SourceFile:91), net.minecraft.util.thread.ThreadedMailbox.a(SourceFile:146), net.minecraft.util.thread.ThreadedMailbox.run(SourceFile:102), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], RUNNABLE Reference Handler: [java.base@17.0.2/java.lang.ref.Reference.waitForReferencePendingList(Native Method), java.base@17.0.2/java.lang.ref.Reference.processPendingReferences(Reference.java:253), java.base@17.0.2/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:215)], TIMED_WAITING Spigot Watchdog Thread: [java.base@17.0.2/java.lang.Thread.sleep(Native Method), org.spigotmc.WatchdogThread.run(WatchdogThread.java:106)], TIMED_WAITING Spigot Metrics Thread: [java.base@17.0.2/java.lang.Object.wait(Native Method), java.base@17.0.2/java.util.TimerThread.mainLoop(Timer.java:563), java.base@17.0.2/java.util.TimerThread.run(Timer.java:516)], RUNNABLE Netty Epoll Server IO #3: [io.netty.channel.epoll.Native.epollWait0(Native Method), io.netty.channel.epoll.Native.epollWait(Native.java:176), io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:281), io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:351), io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986), io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], RUNNABLE IO-Worker-34: [java.base@17.0.2/jdk.internal.misc.Unsafe.park(Native Method), java.base@17.0.2/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252), java.base@17.0.2/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401), java.base@17.0.2/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], WAITING SIGTERM handler: [java.base@17.0.2/java.lang.Object.wait(Native Method), java.base@17.0.2/java.lang.Thread.join(Thread.java:1304), java.base@17.0.2/java.lang.Thread.join(Thread.java:1372), java.base@17.0.2/java.lang.ApplicationShutdownHooks.runHooks(ApplicationShutdownHooks.java:107), java.base@17.0.2/java.lang.ApplicationShutdownHooks$1.run(ApplicationShutdownHooks.java:46), java.base@17.0.2/java.lang.Shutdown.runHooks(Shutdown.java:130), java.base@17.0.2/java.lang.Shutdown.exit(Shutdown.java:173), java.base@17.0.2/java.lang.Terminator$1.handle(Terminator.java:51), java.base@17.0.2/jdk.internal.misc.Signal$1.run(Signal.java:219), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], RUNNABLE DestroyJavaVM: [], TIMED_WAITING IO-Worker-35: [java.base@17.0.2/jdk.internal.misc.Unsafe.park(Native Method), java.base@17.0.2/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252), java.base@17.0.2/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401), java.base@17.0.2/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122), java.base@17.0.2/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], RUNNABLE Thread-1: [net.minecraft.world.level.chunk.Chunk$$Lambda$5821/0x0000000801a5b578.accept(Unknown Source), java.base@17.0.2/java.util.HashMap$Values.forEach(HashMap.java:1065), net.minecraft.world.level.chunk.Chunk.G(Chunk.java:719), net.minecraft.server.level.WorldServer.a(WorldServer.java:1038), net.minecraft.server.level.PlayerChunkMap.lambda$19(PlayerChunkMap.java:550), net.minecraft.server.level.PlayerChunkMap$$Lambda$5708/0x0000000801a36238.accept(Unknown Source), java.base@17.0.2/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718), java.base@17.0.2/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482), net.minecraft.server.level.PlayerChunkMap.b(PlayerChunkMap.java:519), net.minecraft.server.level.PlayerChunkMap.a(PlayerChunkMap.java:488), net.minecraft.server.level.ChunkProviderServer.a(ChunkProviderServer.java:389), net.minecraft.server.MinecraftServer.t(MinecraftServer.java:935), net.minecraft.server.dedicated.DedicatedServer.t(DedicatedServer.java:717), net.minecraft.server.MinecraftServer.close(MinecraftServer.java:876), org.bukkit.craftbukkit.v1_18_R2.util.ServerShutdownThread.run(ServerShutdownThread.java:16)], RUNNABLE Netty Epoll Server IO #2: [io.netty.channel.epoll.Native.epollWait0(Native Method), io.netty.channel.epoll.Native.epollWait(Native.java:176), io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:281), io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:351), io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986), io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], TIMED_WAITING Common-Cleaner: [java.base@17.0.2/java.lang.Object.wait(Native Method), java.base@17.0.2/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155), java.base@17.0.2/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140), java.base@17.0.2/java.lang.Thread.run(Thread.java:833), java.base@17.0.2/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:162)], RUNNABLE Netty Epoll Server IO #0: [io.netty.channel.epoll.Native.epollWait(Native Method), io.netty.channel.epoll.Native.epollWait(Native.java:192), io.netty.channel.epoll.Native.epollWait(Native.java:185), io.netty.channel.epoll.EpollEventLoop.epollWaitNoTimerChange(EpollEventLoop.java:290), io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:347), io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986), io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], RUNNABLE Netty Epoll Server IO #1: [io.netty.channel.epoll.Native.epollWait0(Native Method), io.netty.channel.epoll.Native.epollWait(Native.java:176), io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:281), io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:351), io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986), io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)], WAITING NonBlockingInputStreamThread: [java.base@17.0.2/java.lang.Object.wait(Native Method), jline.internal.NonBlockingInputStream.run(NonBlockingInputStream.java:278), java.base@17.0.2/java.lang.Thread.run(Thread.java:833)],}
+   Recent tasks from 20512-20542{SkinsRestorer:net.skinsrestorer.bukkit.SkinApplierBukkit$$Lambda$5370/0x00000008018be510@2064,}
+   Force Loaded Chunks: { world: {}, world_nether: {}, world_the_end: {},}
+	Server Running: true
+	Player Count: 0 / 9999; []
+	Data Packs: vanilla, file/bukkit (incompatible)
+	World Generation: Stable
+	Is Modded: Definitely; Server brand changed to 'Spigot'
+	Type: Dedicated Server (map_server.txt)
